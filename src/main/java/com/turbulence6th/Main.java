@@ -22,11 +22,10 @@ public class Main {
 			while(true) {
 				try {
 					Thread.sleep(random.nextInt(2000));
+					queue.put(new Message("click", String.valueOf(i++)));
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
-				queue.add(new Message("click", String.valueOf(i++)));
 			}
 		}).start();
 		
@@ -35,11 +34,10 @@ public class Main {
 			while(true) {
 				try {
 					Thread.sleep(random.nextInt(2000));
+					queue.put(new Message("focus", String.valueOf(i++)));
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
-				queue.add(new Message("focus", String.valueOf(i++)));
 			}
 		}).start();
 		
